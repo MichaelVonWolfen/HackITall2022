@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import "./searchBar.sass"
+import HamburgerIcon from "../HamburgerIcon/HamburgerIcon";
 
 export default function SearchBar(){
     return(
