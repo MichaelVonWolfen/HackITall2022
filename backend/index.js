@@ -13,6 +13,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 mongoose.connect(env.mongo_path, () => {
     console.log("Mongoose Initialized");
 })
+const parse = require("./domain/parse");
+parse.parseCompany();
 
 // axios.get(env.db_path).then(res => {
 //     console.log(res.data)
@@ -28,7 +30,7 @@ mongoose.connect(env.mongo_path, () => {
 // gigel();
 
 app.listen(env.port, () => {
-    let companies = seeder();
-    console.log(JSON.stringify(companies, null, 4));
+    // let companies = seeder();
+    // console.log(JSON.stringify(companies, null, 4));
     console.log("Listening on port 5000");
 })
