@@ -8,7 +8,7 @@
 
 .intro{
   margin: auto;
-  z-index: 99;
+  
 }
 
 .black {
@@ -26,29 +26,26 @@
 }
 
 .box{
-  height: 300px;
-  width: 500px;
-  background: #ff3300;
+  height: 400px;
+  width: 600px;
+  background: #ff5714;
   position:absolute;
-  top:150px;
   left:0;
   right:0;
   margin:auto;
+  transform: translateY(65%);
   border-radius:20px;
   box-shadow: 10px 10px #525252;
 }
 
-.boxfather{
-  width:100%;
-  position:absolute;
-  z-index: 2;
+.boxfather {
+
 }
 .box h1{
   color: #E4E4E4;
-  font-size: 5em;
+  font-size: 3em;
   text-align: center;
   position: relative;
-  top:70px;
   font-family: 'Montserrat', sans-serif;
 }
 
