@@ -10,19 +10,26 @@ const CompanySchema = new Schema({
     factors: [{
         type: {
             key: {
-                type:String,
-                trim:String,
-                unique: true
+                type: String,
+                trim: true
             },
             value: [{
-                type:Number,
+                type: Number,
                 trim: true
             }]
         },
     }],
     category: [{
-        type: String,
-        trim: true
+        type: {
+            key: {
+                type: String,
+                trim: true
+            },
+            value: [{
+                type: String,
+                trim: true
+            }]
+        },
     }]
 });
 
