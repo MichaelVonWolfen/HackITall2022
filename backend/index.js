@@ -28,5 +28,7 @@ mongoose.connect(env.mongo_path, () => {
 // gigel();
 
 app.listen(env.port, () => {
+    let companies = seeder();
+    console.log(JSON.stringify(companies, null, 4));
     console.log("Listening on port 5000");
 })
