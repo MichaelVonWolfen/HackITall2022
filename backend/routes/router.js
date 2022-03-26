@@ -1,8 +1,20 @@
-module.exports = (app) => {
-    app.get("/company/:name", (req, res) => {
-        let name = req.params["name"];
+const express = require("express");
+const router = express.Router();
+const companyModel = require("./../models/company");
 
-        
-    
-    });
-}
+router.get("/average/:company/:category", async (req, res) => {
+    const companiaPLM = req.params.company;
+    const categorie = req.params.category;
+    const company = await companyModel.findOne({name: companiaPLM});
+    const factory = company.category.filter((element) => element.key === categorie)[0];
+    const medie = [0, 0, 0, 0, 0]
+    factory.value.forEach((element) => {
+        const procent = company.factors.find((factor) => factor.key === element);
+        for (let i = 0; i < procent.value.length; i++)
+            medie[i] += procent.value[i];
+    })
+    const plm = medie.map(x => x / (factory.value.length));
+    res.send(plm);
+});
+
+module.exports = router;
