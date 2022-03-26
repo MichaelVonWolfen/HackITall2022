@@ -5,6 +5,7 @@ const parseCompany = async () => {
     companies.forEach((element) => {
         let companie, category = [], factories;
         // console.log(element.stockSymbol);
+        console.log(JSON.stringify(element, null, 4));
         (element.categories).forEach((categorie) => {
                 companie = [];
                 factories = [];
@@ -14,7 +15,7 @@ const parseCompany = async () => {
                     categorie[category_name].forEach((factory) => {
 
 
-                        console.log(factories[factory.name]);
+                        //console.log(factories[factory.name]);
                     });
                 });
 

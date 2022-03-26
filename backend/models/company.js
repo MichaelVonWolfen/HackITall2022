@@ -9,12 +9,12 @@ const CompanySchema = new Schema({
     },
     factors: [{
         type: {
-            key:{
+            key: {
                 type:String,
                 trim:String,
                 unique: true
             },
-            value:[{
+            value: [{
                 type:Number,
                 trim: true
             }]
