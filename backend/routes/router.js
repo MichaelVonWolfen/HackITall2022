@@ -17,4 +17,12 @@ router.get("/average/:company/:category", async (req, res) => {
     res.send(plm);
 });
 
+router.get("/average-all/:category", async (req, res) => {
+    const category = req.params.category;
+    const companies = await companyModel.find();
+    const factors = companies.category.filter(elem => elem.key === category)[0];
+    const medie = [0, 0, 0, 0];
+    console.log(factors);
+});
+
 module.exports = router;
