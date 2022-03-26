@@ -7,6 +7,7 @@ router.get("/average/:company/:category", async (req, res) => {
     const categorie = req.params.category;
     const company = await companyModel.findOne({name: companiaPLM});
     const factory = company.category.filter((element) => element.key === categorie)[0];
+    console.log(company);
     const medie = [0, 0, 0, 0, 0]
     factory.value.forEach((element) => {
         const procent = company.factors.find((factor) => factor.key === element);
@@ -17,12 +18,26 @@ router.get("/average/:company/:category", async (req, res) => {
     res.send(plm);
 });
 
-router.get("/average-all/:category", async (req, res) => {
+router.get("/average/:category", async (req, res) => {
     const category = req.params.category;
     const companies = await companyModel.find();
-    const factors = companies.category.filter(elem => elem.key === category)[0];
-    const medie = [0, 0, 0, 0];
-    console.log(factors);
+    const sumTotal = [0, 0, 0, 0, 0];
+    companies.forEach(company => {
+        const factors = company.category.filter(elem => elem.key === category)[0];
+        const medie = [0, 0, 0, 0, 0];
+        factors.value.forEach(element => {
+            const procent = company.factors.find((factor) => factor.key === element);
+            for(let i = 0; i < procent.value.length; i++)
+                medie[i] += procent.value[i];
+        });
+        const med = medie.map(x => x / factors.value.length);
+        med.forEach((elem, i) => {
+            sumTotal[i] += elem;
+        });
+    });
+    const medieTotal = sumTotal.map(x => x / companies.length);
+    res.send(medieTotal);
+    
 });
 
 module.exports = router;
