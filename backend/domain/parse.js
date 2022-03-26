@@ -2,25 +2,29 @@ const companies = require("./seeder")();
 const company = require("./../models/company");
 
 const parseCompany = async () => {
-    companies.forEach((element) => {
-        let companie, category = [], factories;
-        // console.log(element.stockSymbol);
-        console.log(JSON.stringify(element, null, 4));
+
+    companies.forEach(async (element) => {
+        let category, factories;
+        factories = [];
+        category = [];
+        console.log("------");
         (element.categories).forEach((categorie) => {
-                companie = [];
-                factories = [];
-                category = [];
                 Object.keys(categorie).forEach((category_name) => {
-                    category.push(category_name);
+                    //category.push({key: category_name, value: []});
+                    let mm = [];
                     categorie[category_name].forEach((factory) => {
-
-
-                        //console.log(factories[factory.name]);
+                        factories.push(factory);
+                        mm.push(factory.key);
                     });
-                });
+                    category.push({key: category_name, value: mm});
 
+                });
             }
         )
+        // console.log(category);
+        // console.log(factories);
+
+        await company.create({name: element.stockSymbol, factors: factories, category});
     })
 }
 

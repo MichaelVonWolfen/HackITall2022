@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/backend/domain/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/domain/parse.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/domain/seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/domain/seeder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/company.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/company.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

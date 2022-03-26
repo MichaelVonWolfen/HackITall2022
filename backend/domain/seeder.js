@@ -14,12 +14,12 @@ module.exports = () => {
         let category1 = {"Leadership & Governance": []};
         for(let i = 0; i < 4; i++) {
             let factor = {
-                name: factors[i], 
-                score: []
+                key: factors[i],
+                value: []
             };
 
             for(let zi = 0; zi < 5; zi++){
-                factor.score.push((Math.random() * (20 - 5) + 5).toFixed(2));
+                factor.value.push((Math.random() * (20 - 5) + 5).toFixed(2));
             }
             category1["Leadership & Governance"].push(factor);
         }
@@ -27,11 +27,11 @@ module.exports = () => {
         let category2 = {"Human Capital": []};
         for(let i = 0; i < 2; i++) {
                 let factor = {
-                    name: factors[4+i], 
-                    score: []
+                    key: factors[4+i],
+                    value: []
                 };
                 for(let zi = 0; zi < 5; zi++){
-                    factor.score.push((Math.random() * (20 - 5) + 5).toFixed(2));
+                    factor.value.push((Math.random() * (20 - 5) + 5).toFixed(2));
                 }
 
                 category2["Human Capital"].push(factor);
@@ -40,22 +40,22 @@ module.exports = () => {
         let category3 = {"Social Capital": []};
         for(let i = 0; i < 3; i++) {
             let factor = {
-                name: factors[6+i], 
-                score: []
+                key: factors[6+i],
+                value: []
             };
             for(let zi = 0; zi < 5; zi++) {
-                factor.score.push((Math.random() * (20 - 5) + 5).toFixed(2));    
+                factor.value.push((Math.random() * (20 - 5) + 5).toFixed(2));
             }
             category3["Social Capital"].push(factor);
         }
 
         let category4 = {"Environment": []};
         let factor = {
-            name: factors[factors.length - 1], 
-            score: []
+            key: factors[factors.length - 1],
+            value: []
         };
         for(let zi = 0; zi < 5; zi++){
-            factor.score.push((Math.random() * (20 - 5) + 5).toFixed(2));
+            factor.value.push((Math.random() * (20 - 5) + 5).toFixed(2));
         }
         category4["Environment"].push(factor);
         // factors.forEach(factorName => {

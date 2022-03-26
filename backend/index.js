@@ -13,21 +13,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 mongoose.connect(env.mongo_path, () => {
     console.log("Mongoose Initialized");
 })
-const parse = require("./domain/parse");
-parse.parseCompany();
+// const parse = require("./domain/parse");
+// parse.parseCompany();
 
 // axios.get(env.db_path).then(res => {
 //     console.log(res.data)
 // });
 
-// const gigel = async () => {
-//     await company.create({
-//         name: "Marcel",
-//         factors: [{key: "das", value: [1, 2]}, {key: "dasdas", value: [1, 3, 4]}],
-//         category: ["Plm"]
-//     });
-// }
-// gigel();
 
 app.listen(env.port, () => {
     // let companies = seeder();
