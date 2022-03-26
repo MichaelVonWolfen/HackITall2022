@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76f9863e-90cc-4638-bd13-3965e42edfb0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/domain/parse.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/domain/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/domain/parse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/domain/seeder.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/domain/seeder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/company.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/company.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
