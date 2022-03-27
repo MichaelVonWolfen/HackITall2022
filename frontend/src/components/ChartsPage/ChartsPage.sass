@@ -3,20 +3,24 @@ $colorSecond: rgb(39, 115, 171)
 $colorMain: #ff5714
 .chartsContainer
   display: grid
-  grid-template-areas: "chartBig selector"
-  grid-template-rows: 1fr 1fr
+  grid-template-areas: "title title" "chartBig selector" "chartBig pie"
+  grid-template-columns: 2fr 1fr
+  h1
+    grid-area: title
+    text-align: center
+    margin: 50px
+    color: white
   .chartsContainer
     grid-area: chartBig
-    width: 60vw
   .form-select
+    margin:  10px 10px 10px auto
     grid-area: selector
     background-color: $colorSecond
     border-color: $colorMain
     color: #ffffff
-    width: 100%
+    width: 60%
     height: 50px
     padding: 10px
-    margin: 10px
     font-size: 16pt
     display: flex
     justify-content: center
@@ -24,3 +28,5 @@ $colorMain: #ff5714
     transform: translateX(-100px)
     box-shadow: 0 0 5px 1px $colorMain
     border-radius: 10px
+    position: relative
+    z-index: 0
