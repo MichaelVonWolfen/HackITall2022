@@ -3,6 +3,8 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import ChartsPage from "./components/ChartsPage/CharttsPage";
 import {useState} from "react";
 import LandingPage from "./pages/Landing"
+import LoginPage from "./pages/Login";
+import RegisterPage from "./pages/Register";
 
 interface CePLM{
     data:any,
@@ -18,6 +20,8 @@ function App() {
                     <Route path="/charts" element={<ChartsPage data={searchInput}/>} />
                     <Route path="/" element={<LandingPage/>}/>
                     <Route path="/about" element={<div/>} />
+                    <Route path="/login" element={<LoginPage/>} />
+                    <Route path="/register" element={<RegisterPage/>} />
             </Routes>
         </BrowserRouter>
     </div>

@@ -11,7 +11,7 @@ function LandingPage() {
                 <div className="box">
                     <img src={logo} alt="Logo" className="logo"/>
                     <h1>Pregognition</h1>
-                    <Link to="/charts"><button>Enter</button></Link>
+                    <Link to="/login"><button>Enter</button></Link>
                 </div>
             </div>
         </div>
