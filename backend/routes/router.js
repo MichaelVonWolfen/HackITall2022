@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const companyModel = require("./../models/company");
-const userModel = require("../models/user");
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const categoryMap = require("../domain/categoryMap");
@@ -49,17 +48,21 @@ router.get("/average/:category", async (req, res) => {
 });
 
 router.get("/factors/:company", async (req, res) => {
-    
-    const companyName = req.params.company;
-    const company = await companyModel.findOne({name: companyName});
-    const esg = {};
-    company.factors.forEach(factor => {
-        let sum = 0;
-        for(let i = 0; i < 5; i++)
-            sum += factor.value[i];
-            esg[categoryMap[factor.key]] = sum; 
-    });
-    res.send(esg);
+    try{
+        const companyName = req.params.company;
+        const company = await companyModel.findOne({name: companyName});
+        const esg = {};
+        company.factors.forEach(factor => {
+            let sum = 0;
+            for(let i = 0; i < 5; i++)
+                sum += factor.value[i];
+                esg[categoryMap[factor.key]] = sum;
+        });
+        res.send(esg);
+    }catch (e){
+        console.log(e)
+        return res.sendStatus(500)
+    }
 });
 
 router.get("/prediction/:company/:category", async(req, res) => {
@@ -145,14 +148,5 @@ router.get("/prediction/:category", async(req, res) => {
     }
 })
 
-router.post("/auth/login", (req, res) => {
-
-});
-
-router.post("/auth/register", (req, res) => {
-    const {name, email, password} = req.body;
-
-    
-});
 
 module.exports = router;

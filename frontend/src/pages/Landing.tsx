@@ -2,7 +2,10 @@ import "./Landing.css"
 import logo from "../images/logo.svg"
 import { Link } from "react-router-dom";
 
-function LandingPage() {
+interface ceva{
+    allowNavbar:Function
+}
+function LandingPage(props:ceva) {
     return (
         <div className="intro">
             <div className="black"></div>  
