@@ -3,7 +3,6 @@ const app = express();
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose");
 const env = require("./config");
-const axios = require("axios");
 const cors = require('cors');
 
 app.use(cors({
@@ -17,10 +16,6 @@ mongoose.connect(env.mongo_path, () => {
 })
 // const parse = require("./domain/parse");
 // parse.parseCompany();
-
-// axios.get(env.db_path).then(res => {
-//     console.log(res.data)
-// });
 
 const company = require("./routes/router");
 app.use("/api", company);
