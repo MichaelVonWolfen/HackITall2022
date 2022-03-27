@@ -14,11 +14,11 @@ export default function Navbar(props:PLM){
     }
     return(
         <nav className={"navbarContainer"}>
+            <HamburgerIcon clickHandlerPropagation={clickHandler}/>
+            <SearchBar dataSetter={props.dataSetter}/>
             <a href="/">
                 <img src={logo} alt="Logo"/>
             </a>
-            <SearchBar dataSetter={props.dataSetter}/>
-            <HamburgerIcon clickHandlerPropagation={clickHandler}/>
             <div className="navLinks" id={"navLinks"}>
                 <a href="/">Home</a>
                 <a href="/charts">Predictions</a>
