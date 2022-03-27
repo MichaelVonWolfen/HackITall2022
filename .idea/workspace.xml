@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76f9863e-90cc-4638-bd13-3965e42edfb0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/ml/ml.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/domain/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/domain/parse.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +50,9 @@
       <option name="presentableId" value="Default" />
       <updated>1648290176223</updated>
       <workItem from="1648290177361" duration="7484000" />
+      <workItem from="1648332303869" duration="4000" />
+      <workItem from="1648333482508" duration="3000" />
+      <workItem from="1648333843091" duration="586000" />
     </task>
     <servers />
   </component>

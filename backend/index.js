@@ -4,6 +4,7 @@ const bodyParser = require("body-parser")
 const mongoose = require("mongoose");
 const env = require("./config");
 const axios = require("axios");
+const {PythonShell} =require('python-shell');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -17,6 +18,7 @@ mongoose.connect(env.mongo_path, () => {
 // axios.get(env.db_path).then(res => {
 //     console.log(res.data)
 // });
+
 const company = require("./routes/router");
 app.use("/api", company);
 
