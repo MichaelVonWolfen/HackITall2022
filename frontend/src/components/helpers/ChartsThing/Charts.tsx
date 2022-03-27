@@ -109,6 +109,7 @@ export default function LineChart(props:ChartsData){
             let data = await response.json()
             setPredictedAvgData(data)
         })
+
         let labels = []
         for (let i = 0; i < Number_of_elements; i++){
             let date = new Date()

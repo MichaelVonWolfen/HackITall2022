@@ -20,7 +20,7 @@ export default function ChartsPage(props:PLMM){
                     return <option selected={index === 0} value={category}>{category}</option>
                 })}
             </select>
-            <Piechart/>
+            <Piechart company={props.data}/>
         </div>
     )
 }
