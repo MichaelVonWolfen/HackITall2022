@@ -9,7 +9,7 @@ interface CePLM{
     dataSet:any
 }
 function App() {
-    const[searchInput, setSearchInput] = useState("")
+    const[searchInput, setSearchInput] = useState("AAPL")
     return (
         <div className="App">
             <Navbar dataSetter={setSearchInput}/>
