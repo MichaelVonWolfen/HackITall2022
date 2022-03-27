@@ -4,23 +4,21 @@ import ChartsPage from "./components/ChartsPage/CharttsPage";
 import {useState} from "react";
 import LandingPage from "./pages/Landing"
 
-interface CePLM{
-    data:any,
-    dataSet:any
-}
 function App() {
+    const [a, setA] = useState(window.location.href.split("/")[window.location.href.split("/").length - 1] !== "")
+
     const[searchInput, setSearchInput] = useState("AAPL")
     return (
         <div className="App">
-            <Navbar dataSetter={setSearchInput}/>
+            {a && <Navbar dataSetter={setSearchInput}/>}
             <BrowserRouter>
                 <Routes>
                     <Route path="/charts" element={<ChartsPage data={searchInput}/>} />
-                    <Route path="/" element={<LandingPage/>}/>
+                    <Route path="/" element={<LandingPage allowNavbar={setA}/>}/>
                     <Route path="/about" element={<div/>} />
-            </Routes>
-        </BrowserRouter>
-    </div>
+                </Routes>
+            </BrowserRouter>
+        </div>
   );
 }
 

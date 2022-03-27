@@ -2,7 +2,10 @@ import "./Landing.css"
 import logo from "../images/logo.svg"
 import { Link } from "react-router-dom";
 
-function LandingPage() {
+interface ceva{
+    allowNavbar:Function
+}
+function LandingPage(props:ceva) {
     return (
         <div className="intro">
             <div className="black"></div>  
@@ -11,7 +14,8 @@ function LandingPage() {
                 <div className="box">
                     <img src={logo} alt="Logo" className="logo"/>
                     <h1>Pregognition</h1>
-                    <Link to="/charts"><button>Enter</button></Link>
+                    <Link to="/charts"><button onClick={()=>{
+                        props.allowNavbar(true)}}>Enter</button></Link>
                 </div>
             </div>
         </div>
