@@ -18,7 +18,9 @@ mongoose.connect(env.mongo_path, () => {
 // parse.parseCompany();
 
 const company = require("./routes/router");
+const user = require("./routes/register");
 app.use("/api", company);
+app.use("/api", user);
 
 app.listen(env.port, () => {
     console.log("Listening on port 5000");
