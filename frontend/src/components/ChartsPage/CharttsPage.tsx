@@ -18,5 +18,6 @@ export default function ChartsPage(props:PLMM){
                     return <option selected={category === "Select Category..."} value={category}>{category}</option>
                 })}
             </select>
+        </div>
     )
 }
