@@ -41,8 +41,8 @@ function LoginPage() {
     }
 
     return (
-        <div className={"logonContainer"}>
-            <h1>Login</h1>
+        <div className={"lol"}>
+            <h2>Login</h2>
             <form className={"loginContainer"} onSubmit={handleChange}>
                 <input type="text" name="email" id="email" placeholder={"Name..."}/>
                 <input type="password" name="password" id="password" placeholder={"Password..."}/>
