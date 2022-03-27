@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const companyModel = require("./../models/company");
+const userModel = require("../models/user");
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const categoryMap = require("../domain/categoryMap");
@@ -143,5 +144,15 @@ router.get("/prediction/:category", async(req, res) => {
         return res.sendStatus(500)
     }
 })
+
+router.post("/auth/login", (req, res) => {
+
+});
+
+router.post("/auth/register", (req, res) => {
+    const {name, email, password} = req.body;
+
+    
+});
 
 module.exports = router;
