@@ -18,9 +18,12 @@ interface ChartsData {
     category:String
 }
 export default function LineChart(props:ChartsData){
+    const Number_of_elements = 10;
     const [labels, setLabels] = useState(['']);
     const [dataSet, setData] = useState([])
     const [AVGdataSet, setAvgData] = useState([])
+    const [predictedDataSet, setPredictedData] = useState([])
+    const [PredictedAVGdataSet, setPredictedAvgData] = useState([])
     ChartJS.register(
         CategoryScale,
         LinearScale,
@@ -77,13 +80,13 @@ export default function LineChart(props:ChartsData){
         datasets: [
             {
                 label: props.company.toString(),
-                data: dataSet,
+                data: [...dataSet, ...predictedDataSet],
                 borderColor: 'rgb(255, 99, 132)',
                 backgroundColor: 'rgba(255, 99, 132, 0.5)',
             },
             {
                 label: `Average for ${props.category}`,
-                data: AVGdataSet,
+                data: [...AVGdataSet, ...PredictedAVGdataSet],
                 borderColor: 'rgb(53, 162, 235)',
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
             },
@@ -98,8 +101,16 @@ export default function LineChart(props:ChartsData){
             let data = await response.json()
             setAvgData(data)
         })
+        fetch(`http://localhost:5000/api/prediction/${props.company}/${props.category}`).then(async response=>{
+            let data = await response.json()
+            setPredictedData(data)
+        })
+        fetch(`http://localhost:5000/api/prediction/${props.category}`).then(async response=>{
+            let data = await response.json()
+            setPredictedAvgData(data)
+        })
         let labels = []
-        for (let i = 0; i < 5; i++){
+        for (let i = 0; i < Number_of_elements; i++){
             let date = new Date()
             labels.push((2022 - (5 - i)).toString())
         }
