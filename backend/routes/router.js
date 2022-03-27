@@ -3,6 +3,7 @@ const router = express.Router();
 const companyModel = require("./../models/company");
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
+const categoryMap = require("../domain/categoryMap");
 
 router.get("/average/:company/:category", async (req, res) => {
     const companie = req.params.company;
@@ -44,6 +45,20 @@ router.get("/average/:category", async (req, res) => {
         console.log(e)
         return res.sendStatus(500)
     }
+});
+
+router.get("/factors/:company", async (req, res) => {
+    
+    const companyName = req.params.company;
+    const company = await companyModel.findOne({name: companyName});
+    const esg = {};
+    company.factors.forEach(factor => {
+        let sum = 0;
+        for(let i = 0; i < 5; i++)
+            sum += factor.value[i];
+            esg[categoryMap[factor.key]] = sum; 
+    });
+    res.send(esg);
 });
 
 router.get("/prediction/:company/:category", async(req, res) => {
