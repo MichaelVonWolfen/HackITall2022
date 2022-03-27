@@ -41,7 +41,7 @@ function LoginPage() {
     }
 
     return (
-        <div>
+        <div className={"logonContainer"}>
             <h1>Login</h1>
             <form className={"loginContainer"} onSubmit={handleChange}>
                 <input type="text" name="email" id="email" placeholder={"Name..."}/>

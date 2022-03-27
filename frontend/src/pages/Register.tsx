@@ -47,7 +47,7 @@ function LoginPage() {
     }
 
     return (
-        <div>
+        <div className={"registerConteiner"}>
             <h1>Register</h1>
             <form className={"loginContainer"} onSubmit={handleChange}>
                 <input type="text" name="name" id="name" placeholder={"Name..."}/>
