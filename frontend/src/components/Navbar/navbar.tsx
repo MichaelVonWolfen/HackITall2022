@@ -22,7 +22,7 @@ export default function Navbar(props:PLM){
             <div className="navLinks" id={"navLinks"}>
                 <a href="/">Home</a>
                 <a href="/charts">Predictions</a>
-                <a href="/about">About</a>
+                <a href="/" onClick={()=>{localStorage.clear()}}>Logout</a>
             </div>
         </nav>
     )
