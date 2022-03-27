@@ -80,15 +80,27 @@ export default function LineChart(props:ChartsData){
         datasets: [
             {
                 label: props.company.toString(),
-                data: [...dataSet, ...predictedDataSet],
+                data: dataSet,
                 borderColor: 'rgb(255, 99, 132)',
                 backgroundColor: 'rgba(255, 99, 132, 0.5)',
             },
             {
+                label: `Predictions for ${props.company.toString()}`,
+                data: [...dataSet, ...predictedDataSet],
+                borderColor: 'rgb(255, 99, 132)',
+                borderDash: [10,10]
+            },
+            {
                 label: `Average for ${props.category}`,
-                data: [...AVGdataSet, ...PredictedAVGdataSet],
+                data: AVGdataSet,
                 borderColor: 'rgb(53, 162, 235)',
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
+            },
+            {
+                label: `Predictions for ${props.category}`,
+                data: [...AVGdataSet, ...PredictedAVGdataSet],
+                borderColor: 'rgb(53, 162, 235)',
+                borderDash: [10,10]
             },
         ],
     };
