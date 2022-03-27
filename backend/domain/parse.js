@@ -10,10 +10,10 @@ const parseCompany = async () => {
         
         (element.categories).forEach((categorie) => {
                 Object.keys(categorie).forEach((category_name) => {
-                    let mm = [];
+                    let categ = [];
                     categorie[category_name].forEach((factory) => {
                         factories.push(factory);
-                        mm.push(factory.key);
+                        categ.push(factory.key);
                     });
                     category.push({key: category_name, value: mm});
 

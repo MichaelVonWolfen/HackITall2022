@@ -5,9 +5,9 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
 router.get("/average/:company/:category", async (req, res) => {
-    const companiaPLM = req.params.company;
+    const companie = req.params.company;
     const categorie = req.params.category;
-    const company = await companyModel.findOne({name: companiaPLM});
+    const company = await companyModel.findOne({name: companie});
     const factory = company.category.filter((element) => element.key === categorie)[0];
     const medie = [0, 0, 0, 0, 0]
     factory.value.forEach((element) => {
@@ -15,8 +15,8 @@ router.get("/average/:company/:category", async (req, res) => {
         for (let i = 0; i < procent.value.length; i++)
             medie[i] += procent.value[i];
     })
-    const plm = medie.map(x => x / (factory.value.length));
-    res.send(plm);
+    const response = medie.map(x => x / (factory.value.length));
+    res.send(response);
 });
 
 router.get("/average/:category", async (req, res) => {

@@ -17,7 +17,7 @@ interface ChartsData {
     company:String,
     category:String
 }
-export default function Charts(props:ChartsData){
+export default function LineChart(props:ChartsData){
     const [labels, setLabels] = useState(['']);
     const [dataSet, setData] = useState([])
     const [AVGdataSet, setAvgData] = useState([])
@@ -82,7 +82,7 @@ export default function Charts(props:ChartsData){
                 backgroundColor: 'rgba(255, 99, 132, 0.5)',
             },
             {
-                label: 'Dataset 2',
+                label: `Average for ${props.category}`,
                 data: AVGdataSet,
                 borderColor: 'rgb(53, 162, 235)',
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
@@ -101,7 +101,7 @@ export default function Charts(props:ChartsData){
         let labels = []
         for (let i = 0; i < 5; i++){
             let date = new Date()
-            labels.push((date.getDate() - (5 - i)).toString())
+            labels.push((2022 - (5 - i)).toString())
         }
         setLabels(labels)
     },[props])

@@ -19,7 +19,7 @@ $width: 20vw
     position: fixed
     list-style: none
     top: 0
-    right: 0
+    left: 0
     display: flex
     flex-direction: column
     background-color: $colorSecond
@@ -27,8 +27,9 @@ $width: 20vw
     height: calc(100vh - ($paddingTop * 2))
     width: $width
     transition: transform 400ms ease-out
-    transform: translateX($width + 5vw)
+    transform: translateX(-$width - 5vw)
     box-shadow: 0 0 5px 2px $colorSecond
+    z-index: 9
     &.active
       transform: translateX(0vw)
     a
