@@ -21,7 +21,6 @@ router.get("/average/:company/:category", async (req, res) => {
 
 router.get("/average/:category", async (req, res) => {
     try{
-        console.log("AICI PICA?")
         const category = req.params.category;
         const companies = await companyModel.find();
         const sumTotal = [0, 0, 0, 0, 0];
@@ -41,8 +40,6 @@ router.get("/average/:category", async (req, res) => {
         });
         const medieTotal = sumTotal.map(x => x / companies.length);
         res.send(medieTotal);
-
-        console.log("NU PICA")
     }catch (e){
         console.log(e)
         return res.sendStatus(500)
@@ -88,6 +85,48 @@ router.get("/prediction/:company/:category", async(req, res) => {
             }
         })    
     })
+})
+
+router.get("/prediction/:category", async(req, res) => {
+    try{
+        const category = req.params.category;
+        const companies = await companyModel.find();
+        const sumTotal = [0, 0, 0, 0, 0];
+        const medie = [0, 0, 0, 0, 0]; 
+        let index = 0;
+        let prediction;
+        companies.forEach(company => {
+            const factors = company.category.filter(elem => elem.key === category)[0];
+            factors.value.forEach( (element) => {
+                const procent = company.factors.find((factor) => factor.key === element);
+                index+=1;
+                for(let i = 0; i < procent.value.length; i++){
+                    medie[i]+=procent.value[i];
+                }
+            });
+        });
+        let data = medie.map((x)=> x/index);
+        await exec("python ./ml/ml.py " + data, (err, stdout, stderr) => {
+            if (err) {
+                console.log(`error: ${err.message}`);
+                return;
+            }
+            if (stderr) {
+                console.log(`stderr: ${stderr}`);
+                return;
+            }
+           prediction = stdout.split(',').map(function(item) {
+                if (item[0]==='[')
+                    return parseFloat(item.substring(1, item.length));
+                return  parseFloat(item, 10);
+            });
+            res.send(prediction); 
+        })
+      
+    }catch (e){
+        console.log(e)
+        return res.sendStatus(500)
+    }
 })
 
 module.exports = router;

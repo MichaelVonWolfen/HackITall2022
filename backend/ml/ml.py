@@ -20,15 +20,4 @@ for i in range(len(result)):
         result[i]*= prediction[i]* (-1)
 
 print(result)
-
-# from sklearn.neighbors import KNeighborsClassifier
-# from sklearn.neighbors import NearestNeighbors
-# neigh = NearestNeighbors(n_neighbors=2)
-# neigh.fit(x)
-# A = neigh.kneighbors_graph(x)
-# A.toarray()
-# print(A)
-
-# print(neigh.kneighbors(x, return_distance=False))
-
 sys.stdout.flush();
