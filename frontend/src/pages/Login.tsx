@@ -3,21 +3,40 @@ import { Link } from "react-router-dom";
 
 function LoginPage() {
     const handleChange = (e:any) => {
-        e.preventDefaul();
+        e.preventDefault();
         let email = document.getElementById("email")
         let password = document.getElementById("password")
         if(!email) return
         if(!password) return
 
         // @ts-ignore
-        fetch("http://localhost:5000/api/login", {body: JSON.stringify({email: email.value, password: password.value})})
+        let name = email.value;
+        // @ts-ignore
+        let pass = password.value;
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        
+        var raw = JSON.stringify({
+          "name": `${name}`,
+          "password": `${pass}`
+        });
+        
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        
+
+        //console.log(JSON.stringify({name: name, password: pass}));
+        // @ts-ignore
+        fetch("http://localhost:5000/api/login", requestOptions)
         .then(res => res.json())
         .then(result => {
-            if(result.message === "SUCCESS") {
-                localStorage.setItem("token", result.token);
-            } else {
-                console.log("No no!");
-            }
+            localStorage.setItem("token", result.token);
+            window.location.href = "/charts"
         });
     }
 
@@ -25,10 +44,10 @@ function LoginPage() {
         <div>
             <h1>Login</h1>
             <form className={"loginContainer"} onSubmit={handleChange}>
-                <input type="email" name="email" id="email" placeholder={"Email..."}/>
+                <input type="text" name="email" id="email" placeholder={"Name..."}/>
                 <input type="password" name="password" id="password" placeholder={"Password..."}/>
                 <button type="submit">Login</button>
-                <Link to="/register"><button>Register</button></Link>
+                <a href="/register">Register</a>
             </form>
         </div>
     )
