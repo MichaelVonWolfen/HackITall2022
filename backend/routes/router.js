@@ -20,25 +20,33 @@ router.get("/average/:company/:category", async (req, res) => {
 });
 
 router.get("/average/:category", async (req, res) => {
-    const category = req.params.category;
-    const companies = await companyModel.find();
-    const sumTotal = [0, 0, 0, 0, 0];
-    companies.forEach(company => {
-        const factors = company.category.filter(elem => elem.key === category)[0];
-        const medie = [0, 0, 0, 0, 0];
-        factors.value.forEach(element => {
-            const procent = company.factors.find((factor) => factor.key === element);
-            for(let i = 0; i < procent.value.length; i++)
-                medie[i] += procent.value[i];
+    try{
+        console.log("AICI PICA?")
+        const category = req.params.category;
+        const companies = await companyModel.find();
+        const sumTotal = [0, 0, 0, 0, 0];
+        companies.forEach(company => {
+            const factors = company.category.filter(elem => elem.key === category)[0];
+            console.log(factors)
+            const medie = [0, 0, 0, 0, 0];
+            factors.value.forEach(element => {
+                const procent = company.factors.find((factor) => factor.key === element);
+                for(let i = 0; i < procent.value.length; i++)
+                    medie[i] += procent.value[i];
+            });
+            const med = medie.map(x => x / factors.value.length);
+            med.forEach((elem, i) => {
+                sumTotal[i] += elem;
+            });
         });
-        const med = medie.map(x => x / factors.value.length);
-        med.forEach((elem, i) => {
-            sumTotal[i] += elem;
-        });
-    });
-    const medieTotal = sumTotal.map(x => x / companies.length);
-    res.send(medieTotal);
-    
+        const medieTotal = sumTotal.map(x => x / companies.length);
+        res.send(medieTotal);
+
+        console.log("NU PICA")
+    }catch (e){
+        console.log(e)
+        return res.sendStatus(500)
+    }
 });
 
 router.get("/prediction/:company/:category", async(req, res) => {

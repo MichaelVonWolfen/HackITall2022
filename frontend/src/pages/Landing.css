@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Oxygen:400,300);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.intro{
+  margin: auto;
+  
+}
+
+.black {
+  width: 50%;
+  float: left;
+  background: rgba(0, 94, 161, 0.5);
+  height: 100vh;
+}
+
+.white{
+  width: 50%;
+  float: right;
+  background: rgba(39, 115, 171, 0.5);
+  height: 100vh;
+}
+
+.box{
+  height: 400px;
+  width: 600px;
+  background: #ff5714;
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  transform: translateY(65%);
+  border-radius:20px;
+  box-shadow: 10px 10px #525252;
+}
+
+.boxfather {
+
+}
+.box h1{
+  color: #E4E4E4;
+  font-size: 3em;
+  text-align: center;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.box button{
+  left: 41%;
+  position:relative;
+  top:60px;
+  padding: 8px 20px;
+  cursor:pointer;
+  border:0;
+  outline:none;
+  color:#525252;
+  background:#E4E4E4;
+  transition:all .3s ease;
+  font-size: 19px;
+  font-family: montserrat;
+  border-radius:5px;
+}
+
+.homepage{
+  height: 100vh;
+  position:relative;
+  top:40px;
+}
+
+.logo {
+    display: block;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+.homepage p{
+  width: 80%;
+  line-height: 1.5;
+  margin: 50px auto;
+  font-family: oxygen;
+  font-size: 18px;
+  color: #585858;
+}
+
+.homepage h1{
+  padding-top: 50px;
+  width: 80%;
+  margin:auto;
+  font-family: montserrat;
+  color: #525252;
+  font-size: 40px;
+}

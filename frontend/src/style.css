@@ -9,3 +9,22 @@ body {
     background: linear-gradient(45deg, rgba(0, 57, 166, 0.75) 0%, rgba(0,98,95,0.75) 50%, rgba(0,48,143,0.75) 100%);
     overflow-x: hidden;
 }
+
+@media screen and (max-width: 400px) {
+    #features {
+      padding: 20px;
+      width: 111%;
+    }
+    #about,
+    #services,
+    #testimonials,
+    #team,
+    #contact,
+    #footer {
+      width: 111%;
+    }
+  
+    #portfolio {
+      width: 110%;
+    }
+  }
