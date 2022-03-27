@@ -3,19 +3,24 @@ const router = express.Router();
 const companyModel = require("./../models/company");
 
 router.get("/average/:company/:category", async (req, res) => {
-    const companiaPLM = req.params.company;
-    const categorie = req.params.category;
-    const company = await companyModel.findOne({name: companiaPLM});
-    const factory = company.category.filter((element) => element.key === categorie)[0];
-    console.log(company);
-    const medie = [0, 0, 0, 0, 0]
-    factory.value.forEach((element) => {
-        const procent = company.factors.find((factor) => factor.key === element);
-        for (let i = 0; i < procent.value.length; i++)
-            medie[i] += procent.value[i];
-    })
-    const plm = medie.map(x => x / (factory.value.length));
-    res.send(plm);
+    try{
+        const companiaPLM = req.params.company;
+        const categorie = req.params.category;
+        const company = await companyModel.findOne({name: companiaPLM});
+        const factory = company.category.filter((element) => element.key === categorie)[0];
+        console.log(company);
+        const medie = [0, 0, 0, 0, 0]
+        factory.value.forEach((element) => {
+            const procent = company.factors.find((factor) => factor.key === element);
+            for (let i = 0; i < procent.value.length; i++)
+                medie[i] += procent.value[i];
+        })
+        const plm = medie.map(x => x / (factory.value.length));
+        res.send(plm);
+    }catch (e) {
+        console.log(e)
+        return res.sendStatus(400)
+    }
 });
 
 router.get("/average/:category", async (req, res) => {

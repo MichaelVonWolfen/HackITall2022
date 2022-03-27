@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f9863e-90cc-4638-bd13-3965e42edfb0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ChartsPage/ChartsPage.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ChartsPage/CharttsPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/helpers/ChartsThing/Charts.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/helpers/ChartsThing/Charts.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ChartsThing/Charts.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ChartsPage/ChartsPage.sass" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ChartsPage/ChartsPage.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ChartsPage/CharttsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ChartsPage/CharttsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Navbar/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/helpers/ChartsThing/Charts.sass" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/helpers/ChartsThing/Charts.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/helpers/ChartsThing/Charts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/helpers/ChartsThing/Charts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/helpers/SearchBar/searchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/helpers/SearchBar/searchBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +54,11 @@
     <property name="ts.external.directory.path" value="C:\Users\mihai_florin.stoica\WebstormProjects\HackITall2022\frontend\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mihai_florin.stoica\WebstormProjects\HackITall2022\frontend\src\components\helpers" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.start">
     <configuration name="start server" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/backend/package.json" />
@@ -88,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1648290176223</updated>
       <workItem from="1648290177361" duration="7484000" />
-      <workItem from="1648320176132" duration="9992000" />
+      <workItem from="1648320176132" duration="15797000" />
     </task>
     <servers />
   </component>

@@ -3,7 +3,10 @@ import "./Navbar.sass"
 import SearchBar from "../helpers/SearchBar/searchBar";
 import HamburgerIcon from "../helpers/HamburgerIcon/HamburgerIcon";
 import React from "react";
-export default function Navbar(){
+interface PLM{
+    dataSetter:any
+}
+export default function Navbar(props:PLM){
     const clickHandler = () =>{
         const navLinks:HTMLElement | null = document.getElementById("navLinks")
         if(navLinks === null) return
@@ -14,7 +17,7 @@ export default function Navbar(){
             <a href="/">
                 <img src={logo} alt="Logo"/>
             </a>
-            <SearchBar/>
+            <SearchBar dataSetter={props.dataSetter}/>
             <HamburgerIcon clickHandlerPropagation={clickHandler}/>
             <div className="navLinks" id={"navLinks"}>
                 <a href="/">Home</a>
