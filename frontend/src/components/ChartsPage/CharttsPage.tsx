@@ -1,11 +1,11 @@
 import "./ChartsPage.sass"
-import LineChart from "../helpers/ChartsThing/Charts";
+import LineChart from "../helpers/ChartsThing/LineChart";
 import {useState} from "react";
 import Piechart from "../helpers/PieChart/Piechart";
-interface PLMM {
+interface Life {
     data:any
 }
-export default function ChartsPage(props:PLMM){
+export default function ChartsPage(props:Life){
     const categories = ["Leadership & Governance", "Human Capital", "Social Capital", "Environment"];
     const [category, setCategory] = useState("Leadership & Governance")
     const onChangeHandler = (e:any) =>{

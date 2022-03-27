@@ -1,13 +1,15 @@
 $colorSecond: rgba(44, 131, 195, 0.2)
 $colorMain: #ff5714
 $height: 50px
+$buttonWidth: 50%
 .searchBarContainer
   width: 100%
   display: flex
   justify-content: center
   height: fit-content
+  position: relative
   input
-    width: 50%
+    width: $buttonWidth
     padding: 0 $height / 3
     margin: 0
     height: $height
@@ -31,3 +33,38 @@ $height: 50px
     background-color: $colorMain
     color: white
     border: none
+  .searchItemsList
+    &.hidden
+      display: none
+    position: absolute
+    color: white
+    background-color: rgba(0, 0, 0, 0.6)
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5)
+    padding: 10px 10px
+    width: $buttonWidth + 5%
+    top: 0
+    transform: translateY(75px)
+    border-radius: 10px
+    .searchItem
+      cursor: pointer
+      margin: 10px 0
+      padding: 10px 0
+      &:hover
+        background-color: rgba(0, 0, 0, 0.5)
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5)
+    .searchItemBig
+      padding: 10px 20px
+      text-align: center
+      position: relative
+      //border-bottom: 1px solid #8d8d8d
+      font-weight: bolder
+      text-transform: capitalize
+      &::after
+        content: "\\"
+        position: absolute
+        right: 0
+        color: #ff5714
+    .searchItemSmall
+      padding: 10px 20px
+      color: #8d8d8d
+      text-transform: uppercase
