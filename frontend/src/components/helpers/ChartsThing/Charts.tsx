@@ -42,7 +42,7 @@ export default function Charts(props:ChartsData){
             },
             title: {
                 display: true,
-                text: `Chart comparing ${props.company} and Average`,
+                text: `Chart comparing ${props.company} and Average for the "${props.category}" category`,
                 color:"#FFF"
             },
         },
@@ -104,7 +104,7 @@ export default function Charts(props:ChartsData){
             labels.push((date.getDate() - (5 - i)).toString())
         }
         setLabels(labels)
-    },[ ])
+    },[props])
     return (
         <div className="chartsContainer">
             <div className="chart">
